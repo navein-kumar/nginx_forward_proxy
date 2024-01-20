@@ -84,6 +84,8 @@ This domains are blocked with the above configuration:
 By starting the Docker container the file can be mounted into the running container. 
 
 ```
+wget https://raw.githubusercontent.com/navein-kumar/nginx_forward_proxy/main/nginx_allowlist.conf
+
 docker run -d --name nginx_forward_proxy --restart always -p 8888:8888 -v ${PWD}/nginx_allowlist.conf:/usr/local/nginx/conf/nginx.conf navinkr431/nginx_forward_proxy:0.0.3 
 ```
 
@@ -109,6 +111,8 @@ In the example above all pages would be accessible, but google.com and all subdo
 By starting the Docker container the file can be mounted into the running container. 
 
 ```
+wget https://raw.githubusercontent.com/navein-kumar/nginx_forward_proxy/main/nginx_denylist.conf
+
 docker run -d --name nginx_forward_proxy --restart always -p 8888:8888 -v ${PWD}/nginx_denylist.conf:/usr/local/nginx/conf/nginx.conf navinkr431/nginx_forward_proxy:0.0.3
 ```
 
